@@ -10,7 +10,7 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
-            List<string> options = new List<string> { "exit", "greet", "sum" };
+            List<string> options = new List<string> { "exit", "greet", "sum", "divide", "swap"};
 
             menu(options);
         }
@@ -38,9 +38,35 @@ namespace ConsoleApp4
                     case 2:
                         sum();
                         break;
+                    case 3:
+                        divide();
+                        break;
+                    case 4:
+                        swap();
+                        break;
                 }
             }
             Console.WriteLine("Exiting... See you soon!");
+        }
+
+        private static void swap()
+        {
+            Console.WriteLine("Enter two numbers to be swapped:  ");
+            int number1 = int.Parse(Console.ReadLine());
+            int number2 = int.Parse(Console.ReadLine());
+            int temp = number1;
+            number1 = number2;
+            number2 = temp;
+            Console.WriteLine($"{number1} {number2}");
+        }
+
+        private static void divide()
+        {
+            Console.WriteLine("Enter two numbers:  ");
+            int number1 = int.Parse(Console.ReadLine());
+            int number2 = int.Parse(Console.ReadLine());
+            int divided = number1 / number2;
+            Console.WriteLine($"{number1} divided by {number2} is {divided}.");
         }
 
         private static void sum()
